@@ -1,0 +1,31 @@
+.container__credito{
+    padding: 32px;
+
+    .input__filtro{
+        width: 85%;
+    }
+
+    .container__filtro-btn{
+        display: flex;
+        gap: 16px;
+
+        .adicionar__btn{
+            margin-bottom: 20px;
+            width: 15%;
+        }
+    }
+
+    .tabela{
+        background-color: unset !important;
+        border-radius: 0 0 20px 20px;
+    }
+
+}
+
+.credito{
+background-color: rgb(250, 160, 160);
+}
+
+.debito{
+background-color: rgb(132, 132, 248);
+}

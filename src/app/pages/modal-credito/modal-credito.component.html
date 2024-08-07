@@ -1,0 +1,44 @@
+<div class="container__modal-credito">
+  <form [formGroup]="incomeForm" (ngSubmit)="submit()">
+
+    <tui-input-date formControlName="date" [max]="max" [min]="min" [(ngModel)]="from">
+      Data do Crédito
+    </tui-input-date>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Descrição</mat-label>
+      <input
+        type="text"
+        placeholder="Pick one"
+        aria-label="Number"
+        matInput
+        formControlName="describe"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{ option }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <div *ngIf="otherControl">
+      <tui-input formControlName="newDescribe">
+        Descrição
+        <input
+          tuiTextfield
+          type="text"
+        />
+      </tui-input>
+    </div>
+
+    <tui-input-number formControlName="amount" [prefix]="'BRL' | tuiCurrency"
+      >Valor</tui-input-number
+    >
+    
+    <div class="container__btns">
+      <button type="button" (click)="closeDialog()" mat-raised-button >Cancelar</button>
+      <button type="submit" mat-flat-button [disabled]="!this.incomeForm.valid" >Salvar</button>
+    </div>
+  </form>
+</div>

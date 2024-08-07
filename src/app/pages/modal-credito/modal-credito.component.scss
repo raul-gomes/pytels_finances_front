@@ -1,0 +1,19 @@
+.container__modal-credito {
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .container__btns {
+        display: flex;
+        align-self: center;
+        gap: 32px;
+
+        button {
+            width: 200px;
+        }
+    }
+
+}
